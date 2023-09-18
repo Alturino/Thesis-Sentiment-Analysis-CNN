@@ -1,0 +1,15 @@
+@startuml
+skinparam DefaultTextAlignment center
+|Pengguna|
+start
+:Menekan Tombol\nBuka File;
+:Memilih File\nBerkestensi .csv;
+|Sistem|
+:Membaca File\nBerkestensi .csv;
+:Melakukan\nPraproses;
+:Melakukan Analisis\nSentimen;
+:Menampilkan Hasil\nAnalisis Sentimen;
+stop
+
+
+@enduml

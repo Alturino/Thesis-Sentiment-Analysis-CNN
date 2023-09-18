@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/analysisSentenceFragment"
+        android:icon="@drawable/baseline_text_snippet"
+        android:title="@string/sentence" />
+    <item
+        android:id="@+id/analysisFileFragment"
+        android:icon="@drawable/baseline_file_open"
+        android:title="@string/file"/>
+</menu>

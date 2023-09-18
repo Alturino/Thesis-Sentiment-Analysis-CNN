@@ -1,0 +1,149 @@
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[12pt, a4paper, headings=optiontoheadandtoc, toc=chapterentrywithdots]{report}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{ltablex}
+\usepackage{xltabular}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{indentfirst}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[apaciteclassic]{apacite}
+\usepackage{natbib}
+\usepackage[english, bahasa]{babel}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{helvet}
+\usepackage[usegeometry]{typearea}
+\usepackage{geometry}
+\usepackage[titles]{tocloft}
+\usepackage[labelfont=bf, labelsep=space]{caption}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{tocbibind}
+\usepackage{fontspec}
+\usepackage{emoji}
+\usepackage{mathptmx}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{array,longtable}
+\usepackage{xltabular}
+\usepackage{pdflscape}
+\usepackage{makecell}
+\setmainfont{Times New Roman}
+\setromanfont{Times New Roman}
+% \usepackage{showframe} % Uncomment this package to show frame in pdf
+\geometry{
+    a4paper,
+    total={210mm, 297mm},
+    top=4cm,
+    bottom=3cm,
+    left=4cm,
+    right=3cm,
+}
+\addto{\captionsbahasa}{
+    \def\sectionautorefname{Bagian}
+    \def\subsectionautorefname{Sub Bagian}
+    \def\subsubsectionautorefname{Sub Sub Bagian}
+    \renewcommand\chaptername{BAB}
+    \renewcommand\thechapter{\Roman{chapter}}
+    \renewcommand\contentsname{DAFTAR ISI}
+    \renewcommand\listfigurename{DAFTAR GAMBAR}
+    \renewcommand\listtablename{DAFTAR TABEL}
+    \renewcommand\theequation{\Roman{chapter}~\textendash~\arabic{equation}}
+    \renewcommand\thetable{\Roman{chapter}~\textendash~\arabic{table}}
+    \renewcommand\thefigure{\Roman{chapter}~\textendash~\arabic{figure}}
+    \def\refname{DAFTAR PUSTAKA}
+    \def\bibname{DAFTAR PUSTAKA}
+    \renewcommand\thesection{\arabic{chapter}.\arabic{section}}
+    \titleformat{\chapter}[display]{\normalfont\fontsize{12pt}{12pt}\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{12pt}{\fontsize{12pt}{12pt}}[]
+    \titleformat{\section}{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{1em}{}
+    \titleformat{\subsection}{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesubsection}{1em}{}
+    \titleformat{\subsubsection}{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesubsubsection}{1em}{}
+}
+
+\addtocontents{toc}{~\hfill{Halaman}\par}
+\addtocontents{lof}{~\hfill{Halaman}\par}
+\addtocontents{lot}{~\hfill{Halaman}\par}
+
+\renewcommand\cftfigpresnum{Gambar\   }
+\renewcommand\cfttabpresnum{Tabel\   }
+\renewcommand\cftchappresnum{BAB\   }
+\renewcommand\cftchapafterpnum{\vskip1pt}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\cftchapdotsep{\cftdotsep}
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+3.5em}
+\setlength{\cfttabnumwidth}{\dimexpr\mylenf+3em}
+\setlength{\cftchapnumwidth}{\dimexpr\mylenf+0.4em}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\title{Analisis Sentimen Pada Opini Publik Tentang Angkutan Online Menggunakan Metode Convolutional Neural Network (CNN)}
+\author{Ricky Alturino}
+\date{October 2022}
+
+\spacing{1.5}
+\begin{document}
+
+% \maketitle
+
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+\cfoot{\roman{page}}
+\lhead{}
+\rhead{}
+\pagenumbering{roman}
+
+
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\cftaddtitleline{toc}{chapter}{HALAMAN JUDUL}{i}
+% \cftaddtitleline{toc}{chapter}{LEMBAR PENGESAHAN PROPOSAL SKRIPSI}{ii}
+\cftaddtitleline{toc}{chapter}{LEMBAR PENGESAHAN TUGAS AKHIR}{ii}
+\cftaddtitleline{toc}{chapter}{TANDA LULUS UJIAN SIDANG SKRIPSI}{iii}
+\cftaddtitleline{toc}{chapter}{HALAMAN PERNYATAAN}{iv}
+\cftaddtitleline{toc}{chapter}{MOTTO}{v}
+\cftaddtitleline{toc}{chapter}{ABSTRACT}{vi}
+\cftaddtitleline{toc}{chapter}{ABSTRAK}{vii}
+\cftaddtitleline{toc}{chapter}{KATA PENGANTAR}{viii}
+
+\setcounter{page}{10}
+\tableofcontents
+\listoftables
+\listoffigures
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\include{ch-1}
+\include{ch-2}
+\include{ch-3}
+\include{ch-4}
+\include{ch-5}
+\include{ch-6}
+
+
+\pagenumbering{roman}
+\cfoot{\roman{page}}
+\lhead{}
+\rhead{}
+\renewcommand\thepage{\roman{page}}
+
+\setcounter{page}{15}
+\bibliographystyle{apacite}
+\bibliography{ref}
+
+\end{document}

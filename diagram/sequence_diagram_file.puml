@@ -1,0 +1,39 @@
+@startuml
+hide footbox
+actor Pengguna as Pengguna
+
+Pengguna --> FileFragment : btnOpenFile()
+
+activate FileFragment
+    Pengguna --> FileFragment : btnClassify()
+    FileFragment --> BatchAnalyzer : createCM(text)
+    activate BatchAnalyzer
+        BatchAnalyzer --> BatchAnalyzer : classify(text)
+        loop Every Text/Sentiment
+            activate BatchAnalyzer
+                BatchAnalyzer --> Analyzer: classify(text)
+                    activate Analyzer
+                        activate Analyzer
+                            Analyzer --> Analyzer: preprocess(text)
+                            Analyzer --> Analyzer: cleanText(text)
+                            Analyzer --> Analyzer: slangHandling(text)
+                            Analyzer --> Analyzer: removeStopword(text)
+                            Analyzer --> Analyzer: toSequence(text)
+                            Analyzer --> Analyzer: padSequence(text)
+                            Analyzer --> Interpreter: run(input, output)
+                        deactivate Analyzer
+                        
+                        activate Interpreter
+                            Interpreter --> Analyzer: PredictionResult
+                        deactivate Interpreter
+
+                        Analyzer --> BatchAnalyzer: AnalyzerResult
+                    deactivate Analyzer
+            deactivate BatchAnalyzer
+        end
+        BatchAnalyzer --> FileFragment: CM
+    deactivate BatchAnalyzer
+deactivate FileFragment
+
+
+@enduml

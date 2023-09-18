@@ -1,0 +1,7 @@
+index,review,preprocessed,label,prediksi,hasil
+1,Sangat disayangkan update kali ini banyak yang tak terbaca oleh pembaca layar,sayang update baca baca layar,negatif,positif,False Positive
+2,Tolong grab kenapa saya tidak bisa mengunakan aplikasi ny....mohon info nyaa,tolong grab menggunakan aplikasi info,negatif,positif,False Positive
+3,Aplikasi kok gak jelas banget..ternyata masih nyaman di ijo aja lah..,aplikasi banget nyaman ijo,negatif,positif,False Positive
+4,Langsung dapat orderan , tapi tidak ada driver yang datang ke resto , terus bagaimana ini, kasihan pelanggan nungguin. Sudah,order driver resto kasihan langgan tunggu,positif,negatif,False Negative
+5,driver ok, cm aplikasinya yg agak soak. titik lokasi gak focus, itu orang kantir maxim malang kalau butuh tenaga IT bilang...langsung tlp saya,driver aplikasi soak titik lokasi focus kantir, maxim malang butuh tenaga bilang telepon,positif,negatif,False Negative
+6,Alhamdulillah...driver ny baik. Disaat udah 2x pembatalan karena driver yg minta. ...dapat ganti driver yg baik, sopan. Hatur,alhamdulillah driver saat batal driver ganti driver sopan hatur,positif,negatif,False Negative

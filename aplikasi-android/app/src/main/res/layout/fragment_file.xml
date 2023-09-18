@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.FileFragment">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_open_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/open_file"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sentiment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_open_file"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_sentiment" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_classify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/klasifikasi"
+            app:layout_constraintStart_toStartOf="@+id/btn_open_file"
+            app:layout_constraintTop_toBottomOf="@id/rv_sentiment" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_inference_time"
+            style="?attr/textAppearanceHeadline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/process_time"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_open_file"
+            app:layout_constraintTop_toBottomOf="@+id/btn_classify" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_tp_header"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/true_positive"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_inference_time"
+            app:layout_constraintTop_toBottomOf="@+id/tv_inference_time" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_tp_value"
+            style="?attr/textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="@+id/tv_tp_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_tp_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tp_header"
+            tools:text="100" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_tn_header"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/true_negative"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_fp_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_fp_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fp_value" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_tn_value"
+            style="?attr/textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="@+id/tv_tn_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_tn_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tn_header"
+            tools:text="100" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fp_header"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/false_positive"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_tp_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_tp_header" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fp_value"
+            style="?attr/textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="@+id/tv_fp_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_fp_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fp_header"
+            tools:text="15" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fn_header"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/false_negative"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_tp_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tp_value" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fn_value"
+            style="?attr/textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="@+id/tv_fn_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_fn_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fn_header"
+            tools:text="15" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_accuracy"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/accuracy"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_fmeasure"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fmeasure" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_recall"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/recall"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_precision"
+            app:layout_constraintTop_toBottomOf="@+id/tv_precision" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fmeasure"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/f_measure"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_recall"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recall" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_precision"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/precision"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_fn_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fn_value" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_classification_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintTop_toBottomOf="@+id/tv_accuracy"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_analyzer_result" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

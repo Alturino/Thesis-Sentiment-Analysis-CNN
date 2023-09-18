@@ -1,0 +1,14 @@
+
+@startuml
+skinparam DefaultTextAlignment center
+|Expert|
+start
+:Menekan Tombol\nRun;
+|Sistem|
+:Melakukan\nPraproses Teks;
+:Mengubah Kata\nMenjadi\nWord Embedding;
+:Melakukan Analisis\nSentimen Dengan\nMenggunakan CNN;
+:Menampilkan Hasil\nAnalisis Sentimen;
+stop
+
+@enduml

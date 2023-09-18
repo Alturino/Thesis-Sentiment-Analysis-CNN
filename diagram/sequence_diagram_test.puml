@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+
+actor Expert as Expert
+
+Expert --> GoogleColab : Run All Command
+GoogleColab --> Preprocessor : preprocess()
+activate Preprocessor
+    Preprocessor --> Preprocessor: preprocess(text)
+    Preprocessor --> Preprocessor: clean_text(text)
+    Preprocessor --> Preprocessor: slang_handling(text)
+    Preprocessor --> Preprocessor: remove_stopword(text)
+    Preprocessor --> Preprocessor: convert_to_padded(text)
+    Preprocessor --> GoogleColab: Preprocessed Text
+deactivate Preprocessor
+    
+GoogleColab --> Model: fit()
+activate Model
+    Model --> Model: get_classification_report()
+    Model --> GoogleColab : Result of Classification
+deactivate Model
+@enduml

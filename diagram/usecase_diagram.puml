@@ -1,0 +1,18 @@
+@startuml
+
+mainframe usecase
+left to right direction
+actor Pengguna
+actor Expert
+
+rectangle Sistem{
+    usecase "Melakukan Analisis\nSentimen Perkalimat" as uc_sentence
+    usecase "Melakukan Analisis\nSentimen File" as uc_file
+    usecase "Membangun Model\nAnalisis Sentimen" as uc_test
+}
+
+uc_test <- Expert
+Pengguna --> uc_sentence
+Pengguna -> uc_file
+
+@enduml

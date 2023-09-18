@@ -1,0 +1,27 @@
+@startuml
+hide Footbox
+actor Pengguna as Pengguna
+
+Pengguna --> SentenceFragment : btnClassify()
+
+activate SentenceFragment
+    SentenceFragment --> Analyzer: classify(text)
+
+    activate Analyzer
+        Analyzer --> Analyzer: preprocess(text)
+        Analyzer --> Analyzer: cleanText(text)
+        Analyzer --> Analyzer: slangHandling(text)
+        Analyzer --> Analyzer: removeStopword(text)
+        Analyzer --> Analyzer: toSequence(text)
+        Analyzer --> Analyzer: padSequence(text)
+
+        Analyzer --> Interpreter: run(input, output)
+        activate Interpreter
+            Interpreter --> Analyzer: PredictionResult
+        deactivate Interpreter
+
+        Analyzer --> SentenceFragment: AnalyzerResult
+    deactivate Analyzer
+
+deactivate SentenceFragment
+@enduml

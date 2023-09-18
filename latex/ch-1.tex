@@ -1,0 +1,156 @@
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+\rhead{}
+\cfoot{\Roman{chapter}-\arabic{page}}
+\lhead{}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\renewcommand\thepage{\Roman{chapter}-\arabic{page}}
+\chapter{PENDAHULUAN}
+
+\section{Pendahuluan}
+Pada bab pendahuluan ini akan membahas mengenai latar belakang masalah, tujuan, manfaat
+penelitian, rumusan masalah, batasan masalah, sistematika penulisan dan gambaran umum dari
+keseluruhan dari kegiatan dalam penelitian.
+
+\section{Latar Belakang}
+Analisis sentimen adalah proses menganalisis pendapat dan perasaan seseorang tentang individu, entitas,
+produk, isu, atau topik~\citep{Almaghrabi2020}. Analisis sentimen sudah menjadi topik studi yang aktif 
+dalam pemrosesan bahasa alami, \emph{data mining} dan \emph{information retrieval}~\citep{Alshuwaier2022}. 
+Analisis sentimen merepresentasikan dan memonitor secara komprehensif dari informasi yang terkait pada 
+pandangan publik dan tanggapan pelanggan diberbagai entitas dan atribut yang berbeda, seperti 
+media sosial, bisnis, dan berbagai produk atau pelayanan yang lain. Analisis sentimen mengklasifikasikan
+opini, emosi, dan sikap terhadap suatu entitas, sentimen tersebut dapat dikategorikan sebagai kelas
+atau label seperti negatif, positif, dan netral~\citep{Alshuwaier2022}. Berdasarkan pengkategorian 
+kelas-kelas sentimen tersebut maka diperlukan klasifikasi untuk menentukan kelas dari sentimen-sentimen
+yang ada. Terdapat beberapa pendekatan untuk melakukan analisis sentimen, seperti \emph{deep learning}.
+Salah satu pendekatan \emph{deep learning} untuk klasifikasi adalah \emph{Convolutional Neural Network} 
+atau CNN\@.
+
+CNN adalah \emph{feedforward neural network} yang umumnya digunakan pada bidang \emph{computer vision}.
+Pendekatan CNN terinspirasi dari bagaimana cara kerja otak manusia, dan hewan dalam mengenali
+gambar~\citep{Zhang2018}. \newpage 
+
+\fancypagestyle{plain}{}
+\rhead{\Roman{chapter}-\arabic{page}}
+\cfoot{}
+
+Karena hasil yang baik pada CNN dalam pengenalan gambar, dan banyak
+digunakan sebagai metode klasifikasi dibarengi dengan suksesnya klasifikasi ImageNet dengan
+ConvNets dengan landasan tersebut CNN juga dapat diaplikasikan pada bidang analisis sentimen.
+Untuk menerapkan CNN pada bidang analisis sentimen maka diperlukan penyesuaian data yang diberikan
+pada CNN agar dapat memahami data selain gambar dengan baik. Agar CNN dapat memahami data selain 
+gambar dengan baik maka teks perlu diubah menjadi vektor terlebih dahulu proses mengubah teks
+menjadi vektor umumnya disebut \emph{text vectorization}.
+
+Salah satu pendekatan untuk merepresentasikan teks menjadi vektor adalah \emph{Word Embedding}.
+\emph{Word Embedding} adalah cara merepresentasikan kata menjadi vektor, setiap kata dipetakan ke 
+vektor yang berisi nilai riil. Dengan mengubah kata menjadi vektor, kata yang memiliki makna yang 
+sama akan direpresentasikan berdekatan~\citep{Khattak2019}. Metode yang umumnya digunakan untuk
+membuat \emph{Word Embedding} adalah \emph{Word2vec}. \emph{Word2vec} adalah metode berbasis prediksi 
+untuk membuat \emph{Word Embedding} dari \emph{corpus} teks secara efisien.
+
+Penelitian pada bidang analisis sentimen menggunakan CNN dan \emph{Word2vec} sudah banyak dilakukan pada 
+berbagai masalah yang berbeda. \citet{Sharma2020} menggunakan CNN dan \emph{pre-trained Word2vec}
+untuk analisis sentimen pada dataset IMDb movie \emph{review} yang berjumlah 5331 berlabel positif dan
+5331 berlabel negatif dengan akurasi sebesar 99,07\% pada data latih dan 82,19\% pada data uji. Dari
+penelitian ini dapat disimpulkan bahwa CNN dan \emph{Word2vec} sangat efektif dan efisien untuk 
+analisis sentimen.
+
+\citet{Smetanin2019} menggunakan CNN dan \emph{Word2vec} untuk analisis sentimen pada produk \emph{review} dalam
+bahasa Rusia dari kategori `Women's Clothes and Accessories' yang dilabel secara otomatis berdasarkan skor dari \emph{review}
+dengan \emph{Precision} 74,71\%, \emph{Recall} 74,54\% dan \emph{F1-score} 74,31\%. Dari penelitian ini dapat diambil kesimpulan
+bahwa CNN dan \emph{Word2vec} dapat melebihi kinerja dari \emph{Multinomial Naive Bayes}.
+
+\citet{Dong2020} menggunakan CNN untuk analisis sentimen perkalimat pada dataset saham yang sudah
+di praproses dengan akurasi 98,1\% dibandingkan dengan \emph{SVM (Support Vector Machine)} yang 
+memiliki akurasi 90\% dan \emph{Random Forest} memiliki akurasi 93\%. Dari hasil penelitian tersebut
+dapat diambil kesimpulan bahwa CNN melebihi akurasi dari \emph{SVM (Support Vector Machine)} dan 
+\emph{Random Forest}.
+
+Angkutan online merupakan salah satu solusi bagi masyarakat karena memberikan kemudahan pada
+masyarakat untuk mencari penyedia jasa angkutan dan memberikan tarif yang tetap untuk penggunaan
+jasa angkutan online melalui aplikasi. Namun dibalik manfaat atas solusi yang diberikan jasa
+angkutan online, jasa angkutan online juga memiliki kekurangan. Dari permasalahan tersebut maka
+diperlukan analisis seberapa puas sentimen masyarakat dengan aplikasi angkutan online.
+
+Berdasarkan uraian diatas, untuk menguji kinerja dari metode CNN pada analisis sentimen maka akan 
+dilakukan analisis sentimen pada dataset angkutan online.
+
+\section{Rumusan Masalah}
+Rumusan masalah pada penelitian ini ialah bagaimana mengimplementasikan metode
+\emph{Convolutional Neural Network} (CNN) pada sistem analisis sentimen.
+Berdasarkan masalah tersebut diuraikan juga pertanyaan penelitian sebagai berikut.
+
+\begin{enumerate}
+\item Bagaimana mengimplementasikan metode \emph{Convolutional Neural Network} (CNN) ke dalam analisis sentimen?
+\item Bagaimana kinerja analisis sentimen dengan metode \emph{Convolutional Neural Network} berdasarkan pengukuran dari nilai akurasi, \emph{Precision}, \emph{Sensitivity (Recall)}, \emph{F-Measure (F1-Score)}, dan \emph{Accuracy}?
+\end{enumerate}
+
+
+\section{Tujuan Penelitian}
+Tujuan penelitian ini adalah:
+
+\begin{enumerate}
+\item Menghasilkan perangkat lunak berbasis \emph{mobile} analisis sentimen meggunakan metode \emph{Convolutional Neural Network}.
+\item Mengetahui nilai hasil prediksi analisis sentimen \emph{Precision}, \emph{Sensitivity (Recall)}, \emph{F-Measure (F1-Score)}, dan \emph{Accuracy} dengan metode \emph{Convolutional Neural Network}.
+\end{enumerate}
+
+\section{Manfaat Penelitian}
+Berikut merupakan manfaat dari penelitian ini:
+
+\begin{enumerate}
+    \item Mengetahui sentimen masyarakat terhadap topik Angkutan Online.
+    \item Hasil penelitian dapat digunakan sebagai rujukan penelitian di bidang analisis sentimen.
+\end{enumerate}
+
+\section{Batasan Masalah}
+Batasan masalah dalam penelitian ini:
+
+\begin{enumerate}
+    \item Data yang digunakan berupa komentar atau kicauan.
+    \item Data yang digunakan tidak mengandung emotikon dan angka.
+    \item Data yang digunakan adalah teks dalam Bahasa Indonesia.
+    \item Data latih dan test yang digunakan berupa file \emph{.csv}.
+    \item Data diambil dari platform aplikasi \emph{Google Play Review}.
+    \item Penelitian ini membagi sentimen menjadi 2 kelas atau label yaitu positif dan negatif.
+\end{enumerate}
+
+\section{Sistematika Penulisan}
+Penulis dalam menulis laporan penelitian ini mengikuti sistematika penulisan pada skripsi
+Fakultas Ilmu Komputer Universitas Sriwijaya. Berikut merupakan Sistematika yang diterapkan
+penulis:
+
+\subsection{BAB I PENDAHULUAN}
+Bab ini akan membahas mengenai latar belakang masalah, perumusan masalah, tujuan,
+manfaat penelitian, rumusan masalah, batasan masalah, sistematika penulisan dan
+
+\subsection{BAB II KAJIAN LITERATUR}
+Bab ini akan membahas landasan teori yang digunakan dalam penelitian tugas akhir ini,
+seperti definisi-definisi analisis sentimen, praproses, tokenisasi, word embedding, \emph{Word2vec},
+\emph{Convolutional Neural Network} (CNN) dan beberapa literatur mengenai penelitian lain
+yang relevan dengan penelitian ini.
+
+\subsection{BAB III METODOLOGI PENELITIAN}
+Bab ini akan membahas mengenai tahapan yang akan dilakukan pada penelitian tugas akhir.
+Seperti pengumpulan data, analisis data dan perancangan pembangunan system.
+Setiap tahapan penelitian dijelaskan dengan kerangka kerja dan manajemen proyek penelitian
+secara rinci.
+
+\subsection{BAB IV PENGEMBANGAN PERANGKAT LUNAK}
+Bab ini akan membahas tahapan yang dilakukan dalam proses pengembangan perangkat lunak
+analisis sentimen menggunakan \emph{Convolutional Neural Network} (CNN) berbasis \emph{mobile}.
+
+\subsection{BAB V HASIL DAN ANALISIS PERANGKAT LUNAK}
+Bab ini akan membahas mengenai hasil dari pengembangan perankat lunak. Hasil pengujian
+dan analisanya akan dijadikan dasar dari kesimpulan yang diambil dalam penelitian ini.
+
+\subsection{BAB VI KESIMPULAN DAN SARAN}
+Bab ini akan membahas mengenai kesimpulan dari semua uraian yang sudah dijelaskan
+pada bab sebelumnya serta saran yang diuraikan dari hasil penelitian.
+
+\section{Kesimpulan}
+Bab ini telah membahas mengenai latar belakang pada penelitian ini seperti rumusan masalah,
+tujuan penelitian, manfaat penelitian, batasan masalah dan sistematika penulisan.
+Pada penelitian ini akan dilakukan penerapan dan analisa akurasi pada aplikasi analisis
+sentimen berbasis \emph{mobile} menggunakan metode \emph{Convolutional Neural Network} (CNN)

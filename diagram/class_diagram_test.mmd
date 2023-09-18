@@ -1,0 +1,36 @@
+classDiagram
+direction TB
+class Preprocessor{
+    List~String~ stopwords
+    Stemmer stemmer
+    StopwordRemoved stopword_remover
+    Map~String, String~ slang_dictionary
+    lowercase(text String)
+    remove_url(text String)
+    remove_emoji(text String)
+    remove_number(text String)
+    remove_punctuation(text String)
+    remove_number_and_punctuation(text String)
+    stripping(text String)
+    text_cleaning(text String)
+    slang_handling(text String)
+    stemming(text String)
+    preprocess(text String)
+    tokenizing(text String)
+    build_vocab(text String)
+    convert_to_padded(texts List~String~, maxlen int)
+    get_word_embedding(max_sequence_length int, trainable Boolean)
+}
+class Model{
+    History history
+    Preprocessor preprocessor
+    float dropout_rate
+    float learning_rate
+    fit_softmax(x_train, y_train, x_valid, y_valid, maxlen, epochs, batch_size)
+    fit_sigmoid(x_train, y_train, x_valid, y_valid, maxlen, epochs, batch_size)
+    plot_loss()
+    plot_accuracy()
+    get_classification_report()
+}
+
+Model "1" *-- Preprocessor

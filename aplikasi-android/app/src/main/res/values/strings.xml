@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SentimentAnalysisCNN</string>
+    <string name="et_sentiment_hint">Isi sentimen disini</string>
+    <string name="klasifikasi">Klasifikasi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sentence">Sentence</string>
+    <string name="file">File</string>
+    <string name="process_time">Lama Proses: %d ms</string>
+    <string name="open_file">Buka File</string>
+    <string name="choose_file">Pilih File</string>
+    <string name="summary">Summary</string>
+    <string name="true_positive">True Positive</string>
+    <string name="true_negative">True Negative</string>
+    <string name="false_positive">False Positive</string>
+    <string name="false_negative">False Negative</string>
+    <string name="accuracy">Accuracy : %.2f%n </string>
+    <string name="precision">Precision : %.2f%n </string>
+    <string name="f_measure">F-Measure : %.2f%n </string>
+    <string name="recall">Sensitivity : %.2f%n </string>
+    <string name="index">Index</string>
+    <string name="content">Content</string>
+    <string name="prediction">Prediction</string>
+    <string name="actual">Actual</string>
+    <string name="label">Label</string>
+</resources>

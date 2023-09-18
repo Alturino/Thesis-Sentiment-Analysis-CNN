@@ -1,0 +1,13 @@
+@startuml
+skinparam DefaultTextAlignment center
+|Pengguna|
+start
+:Memasukkan Kalimat\nyang Ingin di Analisis;
+:Menekan Tombol\nKlasifikasi;
+|Sistem|
+:Melakukan\nPraproses;
+:Melakukan Analisis\nSentimen;
+:Menampilkan Hasil\nAnalisis Sentimen;
+stop
+
+@enduml

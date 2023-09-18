@@ -1,0 +1,27 @@
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+\cfoot{\Roman{chapter}-\arabic{page}}
+\rhead{}
+\setcounter{page}{1}
+\chapter{KESIMPULAN DAN SARAN}
+
+\section{Kesimpulan}
+Kesimpulan yang dapat diambil sebagai hasil dari penelitian ini adalah sebagai berikut:
+\begin{enumerate}
+  \item Perangkat lunak analisis sentimen pada opini publik tentang angkutan online dengan menggunakan
+        metode CNN berbasis \emph{mobile} dapat dikembangkan dengan baik.
+  \item Analisis sentimen dengan menggunakan metode CNN dapat menghasilkan nilai akurasi, precision,
+        recall, dan f1-score berturut-turut 91,25\%, 91,31\%, 91,25\%, dan 91,25\%. pada data uji dengan pembagian
+        data latih, data validasi, dan data uji dengan rasio 60:20:20 dan konfigurasi dengan nilai parameter
+        epoch = 125, batch\_size = 8, word2vec\_trainable = false, optimizer = adam, learning\_rate = 0.00001,
+        loss = mse, fully\_connected\_activation = sigmoid dan convolution\_activation = relu.
+\end{enumerate}
+
+\section{Saran}
+Saran yang dapat digunakan dari penulis untuk penelitian lebih lanjut sebagai berikut:
+\begin{enumerate}
+  \item Menambahkan dataset karena dataset \emph{review} dengan jumlah 6000 tergolong sedikit untuk melatih CNN\@.
+  \item Menambahkan metode untuk menormalisasi kata menjadi kata baku. 
+  \item Mengubah emoji menjadi kata. 
+  \item Mengubah angka menjadi kata.
+\end{enumerate}
